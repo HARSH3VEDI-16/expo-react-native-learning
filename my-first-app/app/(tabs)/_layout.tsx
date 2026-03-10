@@ -1,16 +1,12 @@
-import { Stack } from "expo-router";
+import { Tabs } from "expo-router";
 
-export default function RootLayout() {
+export default function TabLayout() {
   return (
-    <Stack>
-      {/* Tabs are nested */}
-      <Stack.Screen name="(tabs)/index" options={{ headerShown: false }} />
-
-      {/* Modal screen */}
-      <Stack.Screen 
-        name="add-task" 
-        options={{ presentation: "modal", title: "Add Task" }} 
-      />
-    </Stack>
+    <Tabs>
+      <Tabs.Screen name="index" options={{ title: "Home" }} />
+      <Tabs.Screen name="explore" options={{ title: "Explore" }} />
+      <Tabs.Screen name="tasks" options={{ title: "Tasks" }} />
+      <Tabs.Screen name="about" options={{ title: "About" }} />
+    </Tabs>
   );
 }
